@@ -77,7 +77,7 @@ ul{ padding:0; list-style:none; }
   display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
   gap:40px; align-items:center;
 }
-.hero__logo{ display:block; width:150px; height:150px; margin-bottom:20px; }
+.hero__logo{ display:block; width:180px; height:auto; margin-bottom:22px; mix-blend-mode:screen; }
 .hero h1{ font-size:clamp(26px,3.4vw,42px); line-height:1.12; font-weight:800; letter-spacing:-.01em; }
 .hero__sub{ margin-top:16px; color:var(--sub); font-size:clamp(15px,1.5vw,17px); max-width:54ch; }
 .hero__act{ display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
@@ -97,7 +97,7 @@ ul{ padding:0; list-style:none; }
 @media (max-width:1080px){
   .hero{ min-height:0; padding:48px 0; }
   .hero__grid{ grid-template-columns:1fr; gap:28px; }
-  .hero__logo{ width:110px; height:110px; margin-bottom:16px; }
+  .hero__logo{ width:140px; margin-bottom:16px; }
 }
 /* ---------- гарантии ---------- */
 .guarantees{ padding:24px 0; background:#0d0d0d; border-bottom:1px solid var(--line); }
@@ -308,53 +308,7 @@ ul{ padding:0; list-style:none; }
     <div class="hero__in">
       <div class="wrap hero__grid">
         <div>
-          <svg class="hero__logo" viewBox="0 0 200 200" role="img" aria-label="Логотип ООО ЮГ-РЕГИОН">
-            <defs>
-              <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ffd75e"/>
-                <stop offset=".45" stop-color="#f5c518"/>
-                <stop offset="1" stop-color="#c98a1e"/>
-              </linearGradient>
-              <mask id="lgRing" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
-                <circle cx="100" cy="100" r="94" fill="#fff"/>
-                <circle cx="100" cy="100" r="74" fill="#000"/>
-              </mask>
-              <pattern id="lgMeshA" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
-                <path d="M0 0V26M13 0V26" stroke="#d9a531" stroke-width="1.2" fill="none"/>
-              </pattern>
-              <pattern id="lgMeshB" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-38)">
-                <path d="M0 0V26M13 0V26" stroke="#d9a531" stroke-width="1.2" fill="none"/>
-              </pattern>
-            </defs>
-
-            <g mask="url(#lgRing)">
-              <circle cx="100" cy="100" r="94" fill="url(#lgMeshA)"/>
-              <circle cx="100" cy="100" r="94" fill="url(#lgMeshB)"/>
-            </g>
-
-            <g fill="none" stroke="url(#gold)">
-              <circle cx="100" cy="100" r="96" stroke-width="1.4"/>
-              <circle cx="100" cy="100" r="93.5" stroke-width="2.4"/>
-              <circle cx="100" cy="100" r="75" stroke-width="2"/>
-            </g>
-
-            <g fill="url(#gold)">
-              <path transform="translate(79 66) scale(.52)" d="M0,-10 2.94,-3.09 10,-3.09 4.5,1.5 6.5,8.5 0,4.4 -6.5,8.5 -4.5,1.5 -10,-3.09 -2.94,-3.09 Z"/>
-              <path transform="translate(93 66) scale(.52)" d="M0,-10 2.94,-3.09 10,-3.09 4.5,1.5 6.5,8.5 0,4.4 -6.5,8.5 -4.5,1.5 -10,-3.09 -2.94,-3.09 Z"/>
-              <path transform="translate(107 66) scale(.52)" d="M0,-10 2.94,-3.09 10,-3.09 4.5,1.5 6.5,8.5 0,4.4 -6.5,8.5 -4.5,1.5 -10,-3.09 -2.94,-3.09 Z"/>
-              <path transform="translate(121 66) scale(.52)" d="M0,-10 2.94,-3.09 10,-3.09 4.5,1.5 6.5,8.5 0,4.4 -6.5,8.5 -4.5,1.5 -10,-3.09 -2.94,-3.09 Z"/>
-            </g>
-
-            <line x1="99" y1="83" x2="99" y2="143" stroke="url(#gold)" stroke-width="1.8"/>
-
-            <g fill="url(#gold)">
-              <path d="M95 95c-3 11-11 20-22 26 8-9 11-17 13-27z"/>
-              <path d="M92 105c-5 10-13 17-24 22 9-7 13-14 16-22z" opacity=".88"/>
-              <path d="M88 115c-6 8-14 14-25 18 9-6 14-12 18-19z" opacity=".72"/>
-            </g>
-
-            <text x="105" y="125" font-family="Georgia, 'Times New Roman', serif" font-size="31" font-weight="700" fill="url(#gold)">ЮР</text>
-          </svg>
+          <img class="hero__logo" src="images/logo.png" alt="Логотип ООО «ЮГ-РЕГИОН» — гарантируем качество" width="730" height="960" loading="lazy" decoding="async">
           <h1>Аренда спецтехники и грузоперевозки в Краснодаре</h1>
           <p class="hero__sub">
             Собственный парк строительной и дорожной техники. Подача на объект за 2 часа,
