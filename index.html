@@ -244,15 +244,17 @@ ul{ padding:0; list-style:none; }
 
 /* ---------- отзывы ---------- */
 .reviews{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
-.review{ display:flex; flex-direction:column; gap:12px; }
-.review__stars{ color:var(--gold); font-size:15px; letter-spacing:3px; line-height:1; }
+.review{ display:flex; flex-direction:column; gap:10px; }
+.review__head{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+.review__name{ font-size:14px; font-weight:700; line-height:1.3; }
+.review__date{ flex:none; font-size:12px; color:var(--muted); white-space:nowrap; }
+.review__stars{ color:var(--gold); font-size:14px; letter-spacing:2px; line-height:1; }
+.review__service{ font-size:12px; line-height:1.45; color:var(--gold); opacity:.85; }
 .review__text{ flex:1; font-size:14px; line-height:1.6; color:#b5b5b5; }
-.review__meta{
-  display:flex; align-items:center; justify-content:space-between; gap:10px;
-  border-top:1px solid var(--line); padding-top:12px;
+.review__src{
+  padding-top:10px; border-top:1px solid var(--line);
+  font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#7d7d7d;
 }
-.review__name{ font-size:13.5px; font-weight:700; }
-.review__date{ font-size:12px; color:var(--muted); }
 .reviews__more{ display:flex; justify-content:center; margin-top:24px; }
 
 /* ---------- подвал ---------- */
@@ -561,11 +563,9 @@ ul{ padding:0; list-style:none; }
   </section>
 
   <!-- ================= ОТЗЫВЫ =================
-       ОТЗЫВЫ С АВИТО (первые 5).
-       Тексты закрыты от автоматического чтения — Авито отвечает 403 на запросы
-       без браузера, поэтому в карточках стоят заглушки.
-       Чтобы заполнить: замените текст в .review__text, имя в .review__name
-       и дату в .review__date. Количество карточек менять можно — сетка подстроится. -->
+       Первые 5 отзывов с Авито, перенесены со скриншотов профиля.
+       Обновить отзыв: .review__name (имя), .review__date (дата),
+       .review__service (услуга), .review__text (текст). -->
   <section class="section" id="reviews">
     <div class="wrap">
       <div class="section__head">
@@ -574,44 +574,54 @@ ul{ padding:0; list-style:none; }
       </div>
       <div class="reviews">
         <article class="card review">
-          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
-          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
-          <div class="review__meta">
-            <span class="review__name">Клиент Авито</span>
-            <span class="review__date">—</span>
+          <div class="review__head">
+            <span class="review__name">Александр Кирпа</span>
+            <span class="review__date">11 октября</span>
           </div>
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__service">Аренда и услуги манипулятора, стрела 7,3 т, 19 м</p>
+          <p class="review__text">Спасибо большое Артуру, человек знает своё дело, молодец, работу выполнил на 5+. Удачи во всех делах и процветания в бизнесе.</p>
+          <div class="review__src">Авито · сделка состоялась</div>
         </article>
         <article class="card review">
-          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
-          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
-          <div class="review__meta">
-            <span class="review__name">Клиент Авито</span>
-            <span class="review__date">—</span>
+          <div class="review__head">
+            <span class="review__name">Константин</span>
+            <span class="review__date">27 апреля</span>
           </div>
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__service">Услуги манипулятора 7 т</p>
+          <p class="review__text">Поставленная задача: выполнена.</p>
+          <div class="review__src">Авито · сделка состоялась</div>
         </article>
         <article class="card review">
-          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
-          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
-          <div class="review__meta">
-            <span class="review__name">Клиент Авито</span>
-            <span class="review__date">—</span>
+          <div class="review__head">
+            <span class="review__name">Сергей</span>
+            <span class="review__date">4 марта</span>
           </div>
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__service">Аренда и услуги манипулятора, стрела 7,3 т</p>
+          <p class="review__text">На срочные поиски манипулятора откликнулись очень быстро и оперативно, работа выполнена профессионально. Оператор крана Артур знает своё дело.</p>
+          <div class="review__src">Авито · сделка состоялась</div>
         </article>
         <article class="card review">
-          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
-          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
-          <div class="review__meta">
-            <span class="review__name">Клиент Авито</span>
-            <span class="review__date">—</span>
+          <div class="review__head">
+            <span class="review__name">Иван</span>
+            <span class="review__date">11 октября 2025</span>
           </div>
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__service">Услуги манипулятора</p>
+          <p class="review__text">Большое, человеческое спасибо Артуру, всё сделал на высшем уровне, даже подсказал, как лучше уложить плиты. Человек знает своё дело на 5+.</p>
+          <div class="review__src">Авито · сделка состоялась</div>
         </article>
         <article class="card review">
-          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
-          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
-          <div class="review__meta">
-            <span class="review__name">Клиент Авито</span>
-            <span class="review__date">—</span>
+          <div class="review__head">
+            <span class="review__name">Краснодарский котельный завод</span>
+            <span class="review__date">8 октября 2025</span>
           </div>
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__service">Аренда манипулятора</p>
+          <p class="review__text">Делали заказ на перевозку поддонов, остались довольны. Товар был доставлен вовремя, в целости и сохранности. Будем обращаться и в дальнейшем. Спасибо вам за качественно проделанную работу.</p>
+          <div class="review__src">Авито · сделка состоялась</div>
         </article>
       </div>
       <div class="reviews__more">
