@@ -65,17 +65,40 @@ ul{ padding:0; list-style:none; }
 
 /* ---------- главный экран ---------- */
 .hero{
-  position:relative; height:600px;
-  display:flex; align-items:center; justify-content:center;
-  text-align:center; overflow:hidden;
-  background:#0b0b0b; border-bottom:1px solid var(--line);
+  position:relative; min-height:600px;
+  display:flex; align-items:center;
+  overflow:hidden; background:#0b0b0b;
+  border-bottom:1px solid var(--line);
 }
 .hero__bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .hero__shade{ position:absolute; inset:0; background:rgba(0,0,0,.6); }
-.hero__in{ position:relative; z-index:1; width:100%; max-width:880px; margin:0 auto; padding:0 20px; }
-.hero h1{ font-size:clamp(28px,4.6vw,52px); line-height:1.1; font-weight:800; letter-spacing:-.01em; }
-.hero__sub{ margin-top:18px; color:var(--sub); font-size:clamp(15px,1.6vw,18px); }
-.hero__act{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:30px; }
+.hero__in{ position:relative; z-index:1; width:100%; }
+.hero__grid{
+  display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:40px; align-items:center;
+}
+.hero__logo{ display:block; width:150px; height:150px; margin-bottom:20px; }
+.hero h1{ font-size:clamp(26px,3.4vw,42px); line-height:1.12; font-weight:800; letter-spacing:-.01em; }
+.hero__sub{ margin-top:16px; color:var(--sub); font-size:clamp(15px,1.5vw,17px); max-width:54ch; }
+.hero__act{ display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
+
+/* карточка «О компании» */
+.about-card{
+  background:var(--panel); border:1px solid var(--line);
+  border-left:4px solid var(--gold); border-radius:8px;
+  padding:24px;
+}
+.about-card__title{
+  font-size:12px; font-weight:800; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--gold);
+}
+.about-card p{ margin-top:12px; color:#b5b5b5; font-size:14px; line-height:1.65; }
+
+@media (max-width:1080px){
+  .hero{ min-height:0; padding:48px 0; }
+  .hero__grid{ grid-template-columns:1fr; gap:28px; }
+  .hero__logo{ width:110px; height:110px; margin-bottom:16px; }
+}
 /* ---------- гарантии ---------- */
 .guarantees{ padding:24px 0; background:#0d0d0d; border-bottom:1px solid var(--line); }
 .guarantees__bar{
@@ -266,14 +289,49 @@ ul{ padding:0; list-style:none; }
     <img class="hero__bg" src="images/excavator.jpg" alt="Спецтехника ЮГ-РЕГИОН на объекте" width="1248" height="848" loading="lazy" decoding="async">
     <div class="hero__shade"></div>
     <div class="hero__in">
-      <h1>Аренда спецтехники и грузоперевозки в Краснодаре</h1>
-      <p class="hero__sub">
-        Собственный парк: экскаваторы, фронтальный погрузчик, мини-погрузчик,
-        автогрейдер, дорожный каток и низкорамный трал. Подача на объект за 2 часа, работаем 24/7.
-      </p>
-      <div class="hero__act">
-        <a class="btn" href="https://t.me/" target="_blank" rel="noopener">Заказать расчёт</a>
-        <a class="btn btn--line" href="https://max.ru/" target="_blank" rel="noopener">Написать в MAX</a>
+      <div class="wrap hero__grid">
+        <div>
+          <svg class="hero__logo" viewBox="0 0 200 200" role="img" aria-label="Логотип ООО ЮГ-РЕГИОН">
+            <defs>
+              <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffd75e"/>
+                <stop offset=".45" stop-color="#f5c518"/>
+                <stop offset="1" stop-color="#c98a1e"/>
+              </linearGradient>
+            </defs>
+            <g fill="none" stroke="url(#gold)">
+              <circle cx="100" cy="100" r="93" stroke-width="3"/>
+              <circle cx="100" cy="100" r="82" stroke-width="3"/>
+              <circle cx="100" cy="100" r="87.5" stroke-width="7" stroke-dasharray="3 16" opacity=".9"/>
+              <circle cx="100" cy="100" r="87.5" stroke-width="7" stroke-dasharray="3 16" stroke-dashoffset="9.5" transform="rotate(30 100 100)" opacity=".9"/>
+              <circle cx="100" cy="100" r="87.5" stroke-width="7" stroke-dasharray="3 16" stroke-dashoffset="19" transform="rotate(60 100 100)" opacity=".75"/>
+            </g>
+            <g fill="url(#gold)">
+              <path transform="translate(80.5 72) scale(.5)" d="M0,-10 2.94,-3.09 10,-3.09 4.5,1.5 6.5,8.5 0,4.4 -6.5,8.5 -4.5,1.5 -10,-3.09 -2.94,-3.09 Z"/>
+              <path transform="translate(93.5 72) scale(.5)" d="M0,-10 2.94,-3.09 10,-3.09 4.5,1.5 6.5,8.5 0,4.4 -6.5,8.5 -4.5,1.5 -10,-3.09 -2.94,-3.09 Z"/>
+              <path transform="translate(106.5 72) scale(.5)" d="M0,-10 2.94,-3.09 10,-3.09 4.5,1.5 6.5,8.5 0,4.4 -6.5,8.5 -4.5,1.5 -10,-3.09 -2.94,-3.09 Z"/>
+              <path transform="translate(119.5 72) scale(.5)" d="M0,-10 2.94,-3.09 10,-3.09 4.5,1.5 6.5,8.5 0,4.4 -6.5,8.5 -4.5,1.5 -10,-3.09 -2.94,-3.09 Z"/>
+            </g>
+            <line x1="99" y1="84" x2="99" y2="132" stroke="url(#gold)" stroke-width="1.6"/>
+            <path d="M94 98C87 107 77 114 64 117c8-5 13-12 16-20 5 2 9 2 14 1z" fill="url(#gold)"/>
+            <path d="M91 110c-5 4-11 7-17 8" fill="none" stroke="#0b0b0b" stroke-width="1.1" opacity=".35"/>
+            <text x="105" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="url(#gold)">ЮР</text>
+          </svg>
+          <h1>Аренда спецтехники и грузоперевозки в Краснодаре</h1>
+          <p class="hero__sub">
+            Собственный парк строительной и дорожной техники. Подача на объект за 2 часа,
+            работаем круглосуточно по Краснодару и всему ЮФО.
+          </p>
+          <div class="hero__act">
+            <a class="btn" href="https://t.me/" target="_blank" rel="noopener">Заказать расчёт</a>
+            <a class="btn btn--line" href="https://max.ru/" target="_blank" rel="noopener">Написать в MAX</a>
+          </div>
+        </div>
+        <div class="about-card">
+          <p class="about-card__title">О компании</p>
+          <p>Компания «ЮГ-Регион» более 10 лет обеспечивает объекты строительства спецтехникой и автотранспортом.</p>
+          <p>У нас можно заказать весь парк строительной и дорожной техники для любых видов работ: земляные, высотные, перевозка, погрузка, дорожные работы и т.&nbsp;д.</p>
+        </div>
       </div>
     </div>
   </section>
