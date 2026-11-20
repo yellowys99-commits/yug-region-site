@@ -82,10 +82,14 @@ ul{ padding:0; list-style:none; }
   display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
   gap:40px; align-items:center;
 }
-.hero__logo{ display:block; width:180px; height:auto; margin-bottom:22px; mix-blend-mode:screen; }
 .hero h1{ font-size:clamp(26px,3.4vw,42px); line-height:1.12; font-weight:800; letter-spacing:-.01em; }
-.hero__sub{ margin-top:16px; color:var(--sub); font-size:clamp(15px,1.5vw,17px); max-width:54ch; }
 .hero__act{ display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
+.hero__slogan{
+  display:flex; align-items:center; gap:10px;
+  margin-top:22px; font-size:12px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
+}
+.hero__slogan::before{ content:""; width:28px; height:2px; background:var(--gold); flex:none; }
 
 /* карточка «О компании» */
 .about-card{
@@ -102,7 +106,6 @@ ul{ padding:0; list-style:none; }
 @media (max-width:1080px){
   .hero{ min-height:0; padding:48px 0; }
   .hero__grid{ grid-template-columns:1fr; gap:28px; }
-  .hero__logo{ width:140px; margin-bottom:16px; }
 }
 /* ---------- гарантии ---------- */
 .guarantees{ padding:24px 0; background:#0d0d0d; border-bottom:1px solid var(--line); }
@@ -314,16 +317,12 @@ ul{ padding:0; list-style:none; }
     <div class="hero__in">
       <div class="wrap hero__grid">
         <div>
-          <img class="hero__logo" src="images/logo.png" alt="Логотип ООО «ЮГ-РЕГИОН» — гарантируем качество" width="730" height="960" loading="lazy" decoding="async">
           <h1>Аренда спецтехники и грузоперевозки в Краснодаре</h1>
-          <p class="hero__sub">
-            Собственный парк строительной и дорожной техники. Подача на объект за 2 часа,
-            работаем круглосуточно по Краснодару и всему ЮФО.
-          </p>
           <div class="hero__act">
             <a class="btn" href="https://t.me/" target="_blank" rel="noopener">Заказать расчёт</a>
             <a class="btn btn--line" href="https://max.ru/" target="_blank" rel="noopener">Написать в MAX</a>
           </div>
+          <p class="hero__slogan">Гарантируем качество и надёжность</p>
         </div>
         <div class="about-card">
           <p class="about-card__title">О компании</p>
