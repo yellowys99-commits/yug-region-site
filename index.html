@@ -242,6 +242,19 @@ ul{ padding:0; list-style:none; }
   border:1px solid var(--line); border-radius:8px;
 }
 
+/* ---------- отзывы ---------- */
+.reviews{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.review{ display:flex; flex-direction:column; gap:12px; }
+.review__stars{ color:var(--gold); font-size:15px; letter-spacing:3px; line-height:1; }
+.review__text{ flex:1; font-size:14px; line-height:1.6; color:#b5b5b5; }
+.review__meta{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  border-top:1px solid var(--line); padding-top:12px;
+}
+.review__name{ font-size:13.5px; font-weight:700; }
+.review__date{ font-size:12px; color:var(--muted); }
+.reviews__more{ display:flex; justify-content:center; margin-top:24px; }
+
 /* ---------- подвал ---------- */
 .footer{ background:#000; border-top:1px solid var(--line); padding:28px 0; }
 .footer__in{ display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
@@ -253,6 +266,7 @@ ul{ padding:0; list-style:none; }
   .grid--4,
   .grid--5{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .grid--3{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .reviews{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .contacts{ grid-template-columns:1fr; }
 }
 
@@ -260,6 +274,7 @@ ul{ padding:0; list-style:none; }
   .grid--4,
   .grid--3,
   .grid--5{ grid-template-columns:1fr; }
+  .reviews{ grid-template-columns:1fr; }
   .section{ padding:36px 0; }
   .hero{ height:auto; min-height:520px; padding:64px 0; }
   .hero__act .btn{ width:100%; }
@@ -545,6 +560,66 @@ ul{ padding:0; list-style:none; }
     </div>
   </section>
 
+  <!-- ================= ОТЗЫВЫ =================
+       ОТЗЫВЫ С АВИТО (первые 5).
+       Тексты закрыты от автоматического чтения — Авито отвечает 403 на запросы
+       без браузера, поэтому в карточках стоят заглушки.
+       Чтобы заполнить: замените текст в .review__text, имя в .review__name
+       и дату в .review__date. Количество карточек менять можно — сетка подстроится. -->
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <div class="section__head">
+        <h2 class="h2">Отзывы клиентов</h2>
+        <p class="section__sub">Отзывы заказчиков собраны в нашем профиле на Авито — там же рейтинг и все оценки.</p>
+      </div>
+      <div class="reviews">
+        <article class="card review">
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
+          <div class="review__meta">
+            <span class="review__name">Клиент Авито</span>
+            <span class="review__date">—</span>
+          </div>
+        </article>
+        <article class="card review">
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
+          <div class="review__meta">
+            <span class="review__name">Клиент Авито</span>
+            <span class="review__date">—</span>
+          </div>
+        </article>
+        <article class="card review">
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
+          <div class="review__meta">
+            <span class="review__name">Клиент Авито</span>
+            <span class="review__date">—</span>
+          </div>
+        </article>
+        <article class="card review">
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
+          <div class="review__meta">
+            <span class="review__name">Клиент Авито</span>
+            <span class="review__date">—</span>
+          </div>
+        </article>
+        <article class="card review">
+          <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          <p class="review__text">Здесь будет размещён отзыв заказчика с Авито.</p>
+          <div class="review__meta">
+            <span class="review__name">Клиент Авито</span>
+            <span class="review__date">—</span>
+          </div>
+        </article>
+      </div>
+      <div class="reviews__more">
+        <a class="btn btn--line" href="https://www.avito.ru/brands/i79411778/all?sellerId=d4c9e23bc35bfe9fdaca8d77aa52e52f" target="_blank" rel="noopener nofollow">Смотреть отзывы на Авито</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= КОНТАКТЫ =================
        ССЫЛКИ НА ЧАТЫ — заменить на свои. Каждая встречается дважды: в hero и здесь.
        Telegram → https://t.me/ВАШ_НИК
@@ -601,7 +676,7 @@ ul{ padding:0; list-style:none; }
             </span>
             <div>
               <span class="contact__label">Авито</span>
-              <span class="contact__val"><a href="https://www.avito.ru/brands/i79411778/items/all?s=profile_search_show_all&amp;sellerId=d4c9e23bc35bfe9fdaca8d77aa52e52f" target="_blank" rel="noopener nofollow">Наши объявления на Авито</a></span>
+              <span class="contact__val"><a href="https://www.avito.ru/brands/i79411778/all?sellerId=d4c9e23bc35bfe9fdaca8d77aa52e52f" target="_blank" rel="noopener nofollow">Наши объявления на Авито</a></span>
             </div>
           </li>
           <li class="contact">
